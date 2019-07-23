@@ -1,0 +1,29 @@
+{
+  "name": "mmm-airtable",
+  "version": "1.0.0",
+  "description": "A magic mirror module to fetch real-time data from any Airtable sheet",
+  "main": "MMM-airtable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashatgit/MMM-Airtable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yashatgit/MMM-Airtable/issues"
+  },
+  "homepage": "https://github.com/yashatgit/MMM-Airtable#readme",
+  "keywords": [
+    "magic-mirror",
+    "MagicMirror2",
+    "airtable",
+    "magic-mirror-table",
+    "table"
+  ],
+  "author": "Yash Soni",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.7.0"
+  }
+}

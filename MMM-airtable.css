@@ -1,0 +1,28 @@
+#MMM-airtable {
+  max-width: 80%;
+  float: right;
+}
+.mmt-atable-table {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.mmt-atable-table th {
+  font-weight: 400;
+}
+
+.mmt-atable-table td {
+  word-wrap: break-word;
+  vertical-align: middle;
+}
+
+.mmt-atable-table th,
+.mmt-atable-table td {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.mmt-atable-table-container {
+  margin-bottom: 10%;
+}

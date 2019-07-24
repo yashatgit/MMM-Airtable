@@ -1,17 +1,6 @@
 const NodeHelper = require('node_helper');
 const Airtable = require('airtable');
 
-const data = {
-  columns: ['Day', 'Breakfast', 'Lunch', 'Dinner'],
-  rows: [
-    ['Monday', 'Oats, Masala, damn', 'Maggie', 'Fish'],
-    ['Tuesday', 'Oats', 'Maggie', 'Fish'],
-    ['Wednesday', 'Oats', 'Maggie', 'Fish'],
-    ['Thursday', 'Oats', 'Maggie', 'Fishdmsds, sdjskjasd, 21212, wsdasd'],
-    ['Friday', '1232, dasdasd, asdsad', 'Maggie', ''],
-  ],
-};
-
 module.exports = NodeHelper.create({
   start: function() {
     this.airtableBase = null;
@@ -22,8 +11,8 @@ module.exports = NodeHelper.create({
     if (notification === 'MMM_AIRTABLE_DATA_FETCH') {
       const { tableConfig } = payload;
       const that = this;
+
       this.initializeAirtableOnce(tableConfig);
-      //console.log({ tableConfig });
       this.airtableBase(tableConfig.workspaceName)
         .select({
           view: 'Grid view',
@@ -40,8 +29,8 @@ module.exports = NodeHelper.create({
               .map(record => Object.values(record))
               .slice(0, tableConfig.maxRows),
           };
-          console.log({ allRecords });
-          console.log({ tableData });
+          //console.log({ allRecords });
+          //console.log({ tableData });
           that.sendSocketNotification('MMM_AIRTABLE_DATA_RECEIVED', {
             tableConfig,
             tableData,
@@ -51,7 +40,7 @@ module.exports = NodeHelper.create({
   },
 
   initializeAirtableOnce: function(config) {
-    if (this.airtableInit || !config.airtableAPIKey || !config.airtableBaseId) {
+    if (this.airtableBase || !config.airtableAPIKey || !config.airtableBaseId) {
       return;
     }
     Airtable.configure({

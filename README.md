@@ -89,6 +89,7 @@ Each object in the `tables` array can have the following parameters:
 
 <br>
 Example of an entry in `config.js` which displays 2 tables as shown in Screenshot
+
 ```
 {
   module: 'MMM-airtable',
@@ -115,26 +116,6 @@ Example of an entry in `config.js` which displays 2 tables as shown in Screensho
 ```
 
 <br>
-Example of an entry in `config.js` which displays 2 tables as shown in Screenshot
-```
-{
-  module: 'MMM-airtable',
-  position: 'top_right',
-  config: {
-	airtableAPIKey: '<YOUR_API_KEY>',
-	airtableBaseId: '<YOUR_BASE_ID>',
-	animationSpeed: 1.5 * 1000,
-	updateInterval: 1000 * 50, //refresh after 50 sec
-	tables: [
-	  {
-		workspaceName: 'Meal Planner',
-		tableTitle: 'Meal Planner',
-		maxRows: 7,
-	  },
-	],
-  },
-},
-```
 
 ## Screenshots
 ![](screenshots/MMM_Airtable_airtableTables.jpg)

@@ -40,7 +40,7 @@ module.exports = NodeHelper.create({
               .map(record => Object.values(record))
               .slice(0, tableConfig.maxRows),
           };
-          //console.log({ allRecords });
+          console.log({ allRecords });
           console.log({ tableData });
           that.sendSocketNotification('MMM_AIRTABLE_DATA_RECEIVED', {
             tableConfig,

@@ -15,6 +15,11 @@
 .mmt-atable-table td {
   word-wrap: break-word;
   vertical-align: middle;
+  padding: 4px 0;
+}
+
+.show-border {
+  border-bottom: 1px solid #232222;
 }
 
 .mmt-atable-table th,

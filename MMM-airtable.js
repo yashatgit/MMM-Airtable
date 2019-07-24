@@ -6,11 +6,29 @@
  * MIT Licensed.
  */
 
+//Module documentation: https://github.com/MichMich/MagicMirror/tree/master/modules
+//Modules list: https://github.com/MichMich/MagicMirror/wiki/3rd-party-modules
+
 const buildTableDOM = (tableData, tableConfig) => {
   const renderColumns = columns =>
-    columns.map(columnName => `<th class="bright">${columnName}</th>`).join('');
+    columns
+      .map(
+        columnName =>
+          `<th class="bright ${
+            tableConfig.rowBorder ? 'show-border' : ''
+          }">${columnName}</th>`,
+      )
+      .join('');
 
-  const renderRow = row => row.map(cell => `<td>${cell}</td>`).join('');
+  const renderRow = row =>
+    row
+      .map(
+        cell =>
+          `<td class="${
+            tableConfig.rowBorder ? 'show-border' : ''
+          }">${cell}</td>`,
+      )
+      .join('');
 
   return `
   <div class="mmt-atable-table-container">
@@ -40,6 +58,7 @@ const buildTableConfig = moduleConfig => {
 
 const tableDefaults = {
   maxRows: 20,
+  rowBorder: false,
 };
 
 Module.register('MMM-airtable', {
@@ -47,13 +66,6 @@ Module.register('MMM-airtable', {
     updateInterval: 1000 * 60,
     animationSpeed: 1.5 * 1000,
   },
-
-  //   getTranslations: function() {
-  //     return {
-  //       en: 'translations/en.json',
-  //       es: 'translations/es.json',
-  //     };
-  //   },
 
   getScripts: function() {
     return ['lodash.core.min.js'];

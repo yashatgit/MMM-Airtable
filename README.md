@@ -14,7 +14,7 @@ It can display your Table(s) from your Airtable and update them at a regular int
 Go to https://airtable.com/api and select the **base** to view its API documentation. Click the Javascript version of the Sample API. 
 (Just search for the keyword `apiKey` and you will find the relevant details.)
 
-![](screenshots/MMM_Airtable_airtableKey.jpeg)
+![](screenshots/MMM_Airtable_airtableKey.jpg)
 
 We would need following details for the module to fetch the data:
 1. API key
@@ -26,17 +26,17 @@ We would need following details for the module to fetch the data:
   <thead>
     <tr>
       <th>Option</th>
-      <th>Descriptio</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>airtableAPIKey</code></td>
-      <td><strong>REQUIRED</strong> API Key from Airtable<br><br><strong>Type:</strong> <code>string</code></td>
+      <td><strong>REQUIRED</strong> API Key for Airtable.<br><br><strong>Type:</strong> <code>string</code></td>
     </tr>
     <tr>
       <td><code>airtableBaseId</code></td>
-      <td><strong>REQUIRED</strong> Airtable Base Id<br><br><strong>Type:</strong> <code>string</code></td>
+      <td><strong>REQUIRED</strong> Airtable Base ID.<br><br><strong>Type:</strong> <code>string</code></td>
     </tr>
     <tr>
       <td><code>animationSpeed</code></td>
@@ -44,7 +44,7 @@ We would need following details for the module to fetch the data:
     </tr>
     <tr>
       <td><code>updateInterval</code></td>
-      <td>Time in ms between subsequent calls.<br><br><strong>Type:</strong> <code>number</code><br>Defaults to <code>60*1000</code> (i.e.: one minute).</td>
+      <td>Interval for refetching the latest data.<br><br><strong>Type:</strong> <code>number</code><br>Defaults to <code>60*1000</code> (i.e. one minute).</td>
     </tr>
     <tr>
       <td><code>tables</code></td>
@@ -66,11 +66,11 @@ Each object in the `tables` array can have the following parameters:
   <tbody>
     <tr>
       <td><code>workspaceName</code></td>
-      <td><strong>REQUIRED</strong> Name of the Workspace i.e the table<br><br><strong>Type:</strong> <code>string</code></td>
+      <td><strong>REQUIRED</strong> Name of the Workspace Tab/Table.<br><br><strong>Type:</strong> <code>string</code></td>
     </tr>
     <tr>
       <td><code>tableTitle</code></td>
-      <td>Optional title of your table. How you would like this displayed on your MagicMirror.<br><br><strong>Type:</strong> <code>string</code></td>
+      <td>Optional title for your table. How you would like this displayed on your MagicMirror?<br><br><strong>Type:</strong> <code>string</code></td>
     </tr>
     <tr>
       <td><code>maxRows</code></td>
@@ -80,11 +80,15 @@ Each object in the `tables` array can have the following parameters:
       <td><code>updateInterval</code></td>
       <td>Optional interval for refetching the latest data. Overrides the value from <code>updateInterval</code> in main config.<br><br><strong>Type:</strong> <code>number</code></td>
     </tr>
+    <tr>
+      <td><code>rowBorder</code></td>
+      <td>Optional bool check to show Borders below each row.<br><br><strong>Type:</strong> <code>boolean</code></td>
+    </tr>
   </tbody>
 </table>
 
-
-Here is an example of an entry in `config.js`
+<br>
+Example of an entry in `config.js` which displays 2 tables as shown in Screenshot
 ```
 {
   module: 'MMM-airtable',
@@ -109,3 +113,29 @@ Here is an example of an entry in `config.js`
   },
 },
 ```
+
+<br>
+Example of an entry in `config.js` which displays 2 tables as shown in Screenshot
+```
+{
+  module: 'MMM-airtable',
+  position: 'top_right',
+  config: {
+	airtableAPIKey: '<YOUR_API_KEY>',
+	airtableBaseId: '<YOUR_BASE_ID>',
+	animationSpeed: 1.5 * 1000,
+	updateInterval: 1000 * 50, //refresh after 50 sec
+	tables: [
+	  {
+		workspaceName: 'Meal Planner',
+		tableTitle: 'Meal Planner',
+		maxRows: 7,
+	  },
+	],
+  },
+},
+```
+
+## Screenshots
+![](screenshots/MMM_Airtable_airtableTables.jpg)
+![](screenshots/MMM_Airtable_mirror.jpg)

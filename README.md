@@ -92,7 +92,7 @@ Example of an entry in `config.js` which displays 2 tables as shown in Screensho
 
 ```
 {
-  module: 'MMM-airtable',
+  module: 'MMM-Airtable',
   position: 'top_right',
   config: {
 	airtableAPIKey: '<YOUR_API_KEY>',

@@ -61,7 +61,7 @@ const tableDefaults = {
   rowBorder: false,
 };
 
-Module.register('MMM-airtable', {
+Module.register('MMM-Airtable', {
   defaults: {
     updateInterval: 1000 * 60,
     animationSpeed: 1.5 * 1000,

@@ -6,7 +6,7 @@ It can display your Table(s) from your Airtable and update them at a regular int
 
 # Installation
 1. Navigate into your MagicMirror `modules` folder and execute
-`git clone https://github.com/jclarke0000/MMM-MyCommute.git`.
+`git clone git@github.com:yashatgit/MMM-Airtable.git`.
 3. Enter the `MMM-Airtable` directory and execute `npm install`.
 `cd MMM-Airtable && npm install`.
 

@@ -104,7 +104,7 @@ Example of an entry in `config.js` which displays 2 tables as shown in Screensho
 		workspaceName: 'Meal Planner',
 		tableTitle: 'Meal Planner',
 		maxRows: 7,
-        rowBorder: true,
+        	rowBorder: true, //shows row borders
 	  },
 	  {
 		workspaceName: 'Todos',

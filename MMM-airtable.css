@@ -3,8 +3,7 @@
   float: right;
 }
 .mmt-atable-table {
-  font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
 }
 
@@ -24,8 +23,8 @@
 
 .mmt-atable-table th,
 .mmt-atable-table td {
-  padding-left: 10px;
-  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-bottom: 2px;
 }
 
 .mmt-atable-table-container {

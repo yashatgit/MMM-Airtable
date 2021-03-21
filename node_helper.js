@@ -19,7 +19,7 @@ module.exports = NodeHelper.create({
         })
         .firstPage((err, records) => {
           if (err) {
-            reject(err);
+            console.error(err);
             return;
           }
           const allRecords = records.map(record => record.fields);
